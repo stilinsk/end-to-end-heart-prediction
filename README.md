@@ -1,1 +1,4 @@
 # end-to-end-heart-prediction
+
+In the following notebook and model we will be predicting whether a patient  has a heart disease based on some several features that i ahave indepth expalined in the notebook .Rhe model is a random forest classifcation model where i ahve developed a pipeline of preprocessing our data to fitting and evaluating our model ,Before tweaking our model it has greatly overfitted and  we have to tune the hyperparameters  to redue overfitting for optimizatio of our model perfomance.we have saved the model and we  deploy the model using flask and fastapi
+the Fastapi pp is app.py and the flask app is app.py ,all you need to do is to load this folder you can do this by downloading the files from my github and in your vscode create an enviromnet  and install the requirements.txt, next run the notebook and run the flask and fastapi apps  then build the dockerfile as i havwe already provided it
