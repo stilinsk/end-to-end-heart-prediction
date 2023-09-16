@@ -1,0 +1,9 @@
+seaborn
+matplotlib
+numpy
+pandas
+scikit-learn
+Flask
+uvicorn==0.15.0
+fastapi==0.68.0
+pydantic==1.8.2

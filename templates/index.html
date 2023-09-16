@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  
+  <style>
+    body {
+      background-color: #5A5A5A;
+      color: #5A5A5A;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 14px;
+    }
+    
+    .login {
+      text-align: center;
+      background-color: #5A5A5A;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    
+    .login h1 {
+      font-size: 24px;
+      color: #FFFFFF;
+    }
+    
+    .login form {
+      margin-top: 20px;
+    }
+    
+    .login label {
+      display: block;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+    
+    .login input,
+    .login select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border-radius: 3px;
+      border: 1px solid #FFFFFF;
+      color: #5A5A5A;
+    }
+    
+    .login button {
+      background-color: #4CAF50;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .login h2 {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h1>ML API</h1>
+    
+    <form action="/predict" method="post">
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" placeholder="Enter age" required>
+      
+      <label for="sex">Sex:</label>
+      <select id="sex" name="sex" required>
+        <option value="">Select sex</option>
+        <option value="0">Female</option>
+        <option value="1">Male</option>
+      </select>
+      
+      <label for="chestPain">Chest Pain Type:</label>
+      <select id="chestPain" name="chestPain" required>
+        <option value="">Select chest pain type</option>
+        <option value="0">Typical angina</option>
+        <option value="1">Atypical angina</option>
+        <option value="2">Non-anginal pain</option>
+        <option value="3">Asymptomatic</option>
+      </select>
+      
+      <label for="restingBP">Resting Blood Pressure:</label>
+      <input type="text" id="restingBP" name="restingBP" placeholder="Enter resting blood pressure" required>
+      
+      <label for="cholesterol">Serum Cholesterol:</label>
+      <input type="text" id="cholesterol" name="cholesterol" placeholder="Enter serum cholesterol" required>
+      
+      <label for="fbs">Fasting Blood Sugar:</label>
+      <select id="fbs" name="fbs" required>
+        <option value="">Select fasting blood sugar</option>
+        <option value="0">Below 120 mg/dL</option>
+        <option value="1">Above 120 mg/dL</option>
+      </select>
+      
+      <label for="restECG">Resting ECG:</label>
+      <select id="restECG" name="restECG" required>
+        <option value="">Select resting ECG result</option>
+        <option value="0">Normal</option>
+        <option value="1">ST-T Wave abnormality</option>
+        <option value="2">Possible or definite left ventricular hypertrophy</option>
+      </select>
+      
+      <label for="thalac">Maximum Heart Rate Achieved:</label>
+      <input type="text" id="thalac" name="thalac" placeholder="Enter maximum heart rate achieved" required>
+      
+      <label for="exang">Exercise Induced Angina:</label>
+      <select id="exang" name="exang" required>
+        <option value="">Select exercise induced angina</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+      
+      <label for="oldPeak">ST Depression Induced by Exercise:</label>
+      <input type="text" id="oldPeak" name="oldPeak" placeholder="Enter ST depression induced by exercise" required>
+      
+      <label for="slope">Slope of Peak Exercise ST Segment:</label>
+      <select id="slope" name="slope" required>
+        <option value="">Select slope of peak exercise ST segment</option>
+        <option value="0">Upsloping</option>
+        <option value="1">Flatsloping</option>
+        <option value="2">Downsloping</option>
+      </select>
+      
+      <label for="ca">Number of Major Vessels:</label>
+      <select id="ca" name="ca" required>
+        <option value="">Select number of major vessels</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      
+      <label for="thal">Thallium Stress Result:</label>
+      <select id="thal" name="thal" required>
+        <option value="">Select thallium stress result</option>
+        <option value="1">Normal</option>
+        <option value="2">Fixed defect</option>
+        <option value="3">Reversible defect</option>
+      </select>
+      
+      <button type="submit" class="btn">Predict</button>
+    </form>
+
+    <div>
+      <br>
+      <br>
+      {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
